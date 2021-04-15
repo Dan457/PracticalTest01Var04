@@ -59,5 +59,21 @@ public class PracticalTest01Var04MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView);
 
         displayButton.setOnClickListener(buttonClickListener);
+
+        if (savedInstanceState != null) {
+            if (savedInstanceState.containsKey("firstEditText")) {
+                firstEditText.setText(savedInstanceState.getString("firstEditText"));
+            } else {
+                firstEditText.setText(String.valueOf(""));
+            }
+            if (savedInstanceState.containsKey("secondEditText")) {
+                secondEditText.setText(savedInstanceState.getString("secondEditText"));
+            } else {
+                secondEditText.setText(String.valueOf(""));
+            }
+        } else {
+            firstEditText.setText(String.valueOf(""));
+            secondEditText.setText(String.valueOf(""));
+        }
     }
 }
